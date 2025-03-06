@@ -24,7 +24,7 @@ networking:
   podSubnet: 192.168.0.0/16 # set to Calico's default subnet
 nodes:
   - role: control-plane
-    image: kindest/node:v1.25.11
+    image: kindest/node:v1.32.2
 `
 const kubesliceEntControllerTemplate = `
 kind: Cluster
@@ -35,7 +35,7 @@ networking:
   podSubnet: 192.168.0.0/16 # set to Calico's default subnet
 nodes:
   - role: control-plane
-    image: kindest/node:v1.25.11
+    image: kindest/node:v1.32.2
     extraPortMappings:
       - containerPort: 31000
         hostPort: 8443
@@ -51,7 +51,7 @@ networking:
   podSubnet: 192.168.0.0/16 # set to Calico's default subnet
 nodes:
   - role: control-plane
-    image: kindest/node:v1.25.11
+    image: kindest/node:v1.32.2
     kubeadmConfigPatches:
       - |
         kind: InitConfiguration
