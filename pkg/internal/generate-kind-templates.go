@@ -22,6 +22,10 @@ name: %s
 networking:
   disableDefaultCNI: true # disable kindnet
   podSubnet: 192.168.0.0/16 # set to Calico's default subnet
+containerdConfigPatches:
+- |-
+    [plugins."io.containerd.grpc.v1.cri".registry.mirrors."docker.io"]
+    endpoint = ["http://10.1.116.241:5000"]
 nodes:
   - role: control-plane
     image: kindest/node:v1.32.2
@@ -33,6 +37,10 @@ name: %s
 networking:
   disableDefaultCNI: true # disable kindnet
   podSubnet: 192.168.0.0/16 # set to Calico's default subnet
+containerdConfigPatches:
+- |-
+    [plugins."io.containerd.grpc.v1.cri".registry.mirrors."docker.io"]
+    endpoint = ["http://10.1.116.241:5000"]
 nodes:
   - role: control-plane
     image: kindest/node:v1.32.2
@@ -49,6 +57,10 @@ name: %s
 networking:
   disableDefaultCNI: true # disable kindnet
   podSubnet: 192.168.0.0/16 # set to Calico's default subnet
+containerdConfigPatches:
+- |-
+    [plugins."io.containerd.grpc.v1.cri".registry.mirrors."docker.io"]
+    endpoint = ["http://10.1.116.241:5000"]
 nodes:
   - role: control-plane
     image: kindest/node:v1.32.2
